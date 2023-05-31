@@ -54,7 +54,11 @@ if(!$consulta){
 		echo "</form>";
 	}
 	if($fim<$ultimo){
-		$inicio+=5;
+		if($fim==5){
+			$inicio+=5;
+		}else{
+			$inicio+=10;
+		}
 		echo "<form class='minibotao' action='/petshop/listar/cliente' method='POST'>";
 		echo "<input type='hidden' name='inicio' value='$inicio'>";
 		echo "<input type='submit' value='&rarr;'>";
