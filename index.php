@@ -22,16 +22,16 @@ if($request=='/login'){
 			case '/cadastrar/pet':
 				require 'pages/cadastrarpet.php';
 			break;
-			case 'cadastrar/servico':
+			case '/cadastrar/servico':
 				require 'pages/cadastrarservico.php';
 			break;
-			case 'listar/cliente':
+			case '/listar/cliente':
 				require 'pages/listarcliente.php';
 			break;
-			case 'listar/pet':
+			case '/listar/pet':
 				require 'pages/listarpet.php';
 			break;
-			case 'listar/servico':
+			case '/listar/servico':
 				require 'pages/listarservico.php';
 			break;
 			case '/buscar':
