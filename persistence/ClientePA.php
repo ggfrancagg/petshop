@@ -102,5 +102,47 @@ class ClientePA{
 			return $consulta;
 		}
 	}
+
+	public function alterar($cliente)
+	{
+		$sql="update cliente set cpf=".
+		$cliente->getCpf().", nome='".
+		$cliente->getNome()."', telefone='".
+		$cliente->getTelefone()."', rua='".
+		$cliente->getRua()."', bairro='".
+		$cliente->getBairro()."', cidade='".
+		$cliente->getCidade()."', estado='".
+		$cliente->getEstado()."', email='".
+		$cliente->getEmail()."' where id=".
+		$cliente->getId();
+		$resp=$this->banco->executar($sql);
+		if(!$resp){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	public function retornaCliente($id)
+	{
+		$sql="select * from cliente where id=$id";
+		$consulta=$this->banco->consultar($sql);
+		if(!$consulta){
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	public function deletar($id)
+	{
+		$sql="delete from cliente where id=$id";
+		$resp=$this->banco->executar($sql);
+		if(!$resp){
+			return false;
+		}else{
+			return true;
+		}
+	}
 }				
 ?>
