@@ -94,3 +94,10 @@ background:linear-gradient(to left,#F2762E,#F28627,#F29B30);
 form h1{
 	font-size: 1.3rem;
 }
+form.minibotao{
+	background: transparent;
+	width: auto;
+	height: auto;
+	margin-top: 0px;
+	margin-left: 0px;
+}
