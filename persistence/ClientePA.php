@@ -57,6 +57,50 @@ class ClientePA{
 		}
 	}
 
-}
+	public function buscar($busca)
+	{
+		$sql="select * from cliente where id='$busca' or cpf='$busca' or nome like '$busca' or telefone='$busca' or rua like '%$busca%' or bairro like '%$busca%' or cidade like '%$busca%' or estado like '%$busca%' or email like '%$busca%' or nascimento like '%$busca%'";
+		$consulta=$this->banco->consultar($sql);
+		if(!$consulta){
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
 
+	public function listarNomes()
+	{
+		$sql="select nome from cliente";
+		$consulta=$this->banco->consultar($sql);
+		if(!$consulta){
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	public function converteNome($cliente)
+	{
+		$sql="select id from cliente where nome='".
+		$cliente->getNome()."'";
+		$consulta=$this->banco->consultar($sql);
+		if(!$consulta){
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
+	public function converteId($cliente)
+	{
+		$sql="select nome from cliente where id=".
+		$cliente->getId();
+		$consulta=$this->banco->consultar($sql);
+		if(!$consulta){
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+}				
 ?>
