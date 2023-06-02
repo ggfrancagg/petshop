@@ -31,6 +31,13 @@ if (isset($_POST['botao'])) {
 <?php
 
 		}
+	}else if (isset($_POST['excluir'])) {
+		echo "<form action='/petshop/alterar/resultado' method='POST'>";
+		echo "<p>Tem certeza que deseja excluir?</p>";
+		echo "<input type='hidden' name='id' value='".$_POST['excluir']."'>";
+		echo "<input type='submit' name='botaoexcluir' value='SIM'>";
+		echo "<button onclick='window.open(/petshop/buscar);'>Não</button>";
+		echo "</form>";
 	}
 }
 ?>

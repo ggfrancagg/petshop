@@ -21,6 +21,15 @@ if (isset($_POST['botao'])&&isset($_POST['cpf'])) {
 	}else{
 		echo "<h2>Cliente alterado com sucesso!</h2>";
 	}
+}else if(isset($_POST['botaoexcluir'])){
+	require_once './persistence/ClientePA.php';
+	$clientePA=new ClientePA();
+	$resp=$clientePA->deletar($_POST['id']);
+	if(!$resp){
+		echo "<h2>Erro na tentativa de excluir!</h2>";
+	}else{
+		echo "<h2>Cliente excluido com sucesso!</h2>";
+	}
 }
 ?>
 </body>
