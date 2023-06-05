@@ -79,15 +79,15 @@ class ClientePA{
 		}
 	}
 
-	public function converteNome($cliente)
+	public function converteNome($nome)
 	{
-		$sql="select id from cliente where nome='".
-		$cliente->getNome()."'";
+		$sql="select id from cliente where nome='$nome'";
 		$consulta=$this->banco->consultar($sql);
 		if(!$consulta){
 			return false;
 		}else{
-			return $consulta;
+			$linha=$consulta->fetch_assoc();
+			return $linha['id'];
 		}
 	}
 
