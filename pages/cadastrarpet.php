@@ -1,7 +1,7 @@
 <?php
 require_once 'cabecalho.php';
 ?>
-<form action="/cadastrar/pet" method="POST" enctype="multipart/form-data">
+<form action="/petshop/cadastrar/pet" method="POST" enctype="multipart/form-data">
 	<h1>Cadastro de PET</h1>
 	<p>Nome:<input type="text" name="nome" size="20" maxlength="20" pattern="[a-zA-Z0-9]{1,20}" required></p>
 <?php
@@ -26,8 +26,33 @@ if(!$consulta){
 ?>
 </form>
 <?php
-
-
+	if(isset($_POST['botao'])){
+		require_once './model/Pet.php';
+		require_once './persistence/PetPA.php';
+		$pet=new Pet();
+		$petPA=new PetPA();
+		$id=$petPA->retornaId();
+		if(!$id){
+			$id=0;
+		}
+		$id++;
+		$pet->setId($id);
+		$pet->setNome($_POST['nome']);
+		$pet->setNascimento($_POST['nascimento']);
+		$pet->setPelagem($_POST['pelagem']);
+		require_once './model/Cliente.php';
+		$cliente=new Cliente();
+		$cliente->setId($_POST['cliente']);
+		$imagem=addslashes(file_get_contents($_FILES['imagem']['tmp_name']));
+		$pet->setImagem($imagem);
+		$pet->setCliente($cliente->getId());
+		$resp=$petPA->cadastrar($pet);
+		if (!$resp) {
+			echo "<h2>Erro na tentativa de cadastrar PET!</h2>";
+		}else{
+			echo "<h2>PET cadastrado com sucesso!</h2>";
+		}
+	}
 ?>
 </body>
 </html>

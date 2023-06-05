@@ -16,8 +16,8 @@ class PetPA{
 		$pet->getCliente().",'".
 		$pet->getNome()."','".
 		$pet->getNascimento()."','".
-		$pet->getPelagem()."',".
-		$pet->getImagem().")";
+		$pet->getPelagem()."','".
+		$pet->getImagem()."')";
 		$resp=$this->banco->executar($sql);
 		if(!$resp){
 			return false;
@@ -66,7 +66,7 @@ class PetPA{
 	{
 		$sql="update pet set nome='".
 		$pet->getNome()."', cliente=".$pet->getCliente().
-		",nascimento='".$pet->getNascimento()."', pelagem='".$pet->getPelagem()."', imagem=".$pet->getImagem()." where id=".$pet->getId();
+		",nascimento='".$pet->getNascimento()."', pelagem='".$pet->getPelagem()."', imagem='".$pet->getImagem()."' where id=".$pet->getId();
 		$resp=$this->banco->executar($sql);
 		if (!$resp) {
 			return false;
