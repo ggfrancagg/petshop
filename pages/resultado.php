@@ -101,6 +101,17 @@ if(isset($_POST['botao'])&&isset($_POST['busca'])){
 				echo "<td>".$linha['nascimento']."</td>";
 				echo "<td><input type='color' value='".$linha['pelagem']."' readonly></td>";
 				echo "<td><img src='data:image/jpeg;base64,".base64_encode($linha['imagem'])."' class='foto'></td>";
+				if ($tipo_usu!=3) {
+					echo "<td>";
+					$pet->setId($linha['id']);
+					echo "<form action='/petshop/alterar' method='POST' class='minibotao'>";
+					echo "<input type='hidden' name='alterar' value='".$pet->getId()."'>";
+					echo "<input type='submit' name='botao2' value='alterar'></form></td>";
+					echo "<td><form action='/petshop/alterar' method='POST' class='minibotao'>";
+					echo "<input type='hidden' name='excluir' value='".$pet->getId()."'>";
+					echo "<input type='submit' name='botao2' value='excluir'></form>";
+					echo "<td>";
+				}
 				echo "</tr>";
 			}
 			echo "</table>";
