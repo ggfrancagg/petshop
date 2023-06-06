@@ -93,8 +93,7 @@ class ClientePA{
 
 	public function converteId($cliente)
 	{
-		$sql="select nome from cliente where id=".
-		$cliente->getId();
+		$sql="select nome from cliente where id=$cliente";
 		$consulta=$this->banco->consultar($sql);
 		if(!$consulta){
 			return false;
