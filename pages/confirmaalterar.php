@@ -38,9 +38,9 @@ if (isset($_POST['botao'])&&isset($_POST['cpf'])) {
 		$pet=new Pet();
 		$petPA=new PetPA();
 		$clientePA=new ClientePA();
-		if(isset($_FILES['imagem'])){
+		if(isset($_POST['imagem'])){
 			$imagem=$_FILES['imagem']['tmp_name'];
-			$imagem=addslashes(file_get_contents($imagem));
+			$imagem=file_get_contents($imagem);
 		}else{
 			$consulta=$petPA->retornaPet($_POST['id']);
 			$linha=$consulta->fetch_assoc();
@@ -48,15 +48,24 @@ if (isset($_POST['botao'])&&isset($_POST['cpf'])) {
 		}
 		$pet->setId($_POST['id']);
 		$pet->setNome($_POST['nome']);
-		$pet->setId($clientePA->converteNome($_POST['cliente']));
+		$pet->setCliente($clientePA->converteNome($_POST['cliente']));
 		$pet->setNascimento($_POST['nascimento']);
 		$pet->setPelagem($_POST['pelagem']);
-		$pet->setImagem($imagem);
+		$pet->setImagem(addslashes($imagem));
 		$resp=$petPA->alterar($pet);
 		if(!$resp){
 			echo "<h2>Erro na tentativa de alterar PET!</h2>";
 		}else{
 			echo "<h2>PET alterado com sucesso!</h2>";
+		}
+	}else if(isset($_POST['id'])){
+		require_once './persistence/PetPA.php';
+		$petPA=new PetPA();
+		$resp=$petPA->deletar($_POST['id']);
+		if(!$resp){
+			echo "<h2>Erro ao tentar excluir!</h2>";
+		}else{
+			echo "<h2>Exclusão com sucesso!</h2>";
 		}
 	}
 }
