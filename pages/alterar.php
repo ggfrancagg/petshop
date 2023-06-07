@@ -39,6 +39,10 @@ if (isset($_POST['botao'])) {
 		echo "<button onclick='window.open(/petshop/buscar);'>Não</button>";
 		echo "</form>";
 	}
+}else if(isset($_POST['botao2'])){
+	if(isset($_POST['alterar'])){
+		
+	}
 }
 ?>
 </body>
