@@ -109,5 +109,16 @@ class PetPA{
 		}
 	}
 
+	public function retornaPet($id)
+	{
+		$sql="select * from pet where id=$id";
+		$consulta=$this->banco->consultar($sql);
+		if(!$consulta){
+			return false;
+		}else{
+			return $consulta;
+		}
+	}
+
 }
 ?>
