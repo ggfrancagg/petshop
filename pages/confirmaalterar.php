@@ -30,6 +30,35 @@ if (isset($_POST['botao'])&&isset($_POST['cpf'])) {
 	}else{
 		echo "<h2>Cliente excluido com sucesso!</h2>";
 	}
+}else if(isset($_POST['botao2'])){
+	if (isset($_POST['nome'])) {
+		require_once './model/Pet.php';
+		require_once './persistence/PetPA.php';
+		require_once './persistence/ClientePA.php';
+		$pet=new Pet();
+		$petPA=new PetPA();
+		$clientePA=new ClientePA();
+		if(isset($_FILES['imagem'])){
+			$imagem=$_FILES['imagem']['tmp_name'];
+			$imagem=addslashes(file_get_contents($imagem));
+		}else{
+			$consulta=$petPA->retornaPet($_POST['id']);
+			$linha=$consulta->fetch_assoc();
+			$imagem=$linha['imagem'];
+		}
+		$pet->setId($_POST['id']);
+		$pet->setNome($_POST['nome']);
+		$pet->setId($clientePA->converteNome($_POST['cliente']));
+		$pet->setNascimento($_POST['nascimento']);
+		$pet->setPelagem($_POST['pelagem']);
+		$pet->setImagem($imagem);
+		$resp=$petPA->alterar($pet);
+		if(!$resp){
+			echo "<h2>Erro na tentativa de alterar PET!</h2>";
+		}else{
+			echo "<h2>PET alterado com sucesso!</h2>";
+		}
+	}
 }
 ?>
 </body>

@@ -6,5 +6,6 @@
 	<title>Sistema PETSHOP</title>
 	<link rel="stylesheet" type="text/css" href="/petshop/css/estilo.css">
 	<link rel="icon" href="/petshop/img/icone.ico">
+	<script src="/petshop/js/load.js" defer></script>
 </head>
 <body>

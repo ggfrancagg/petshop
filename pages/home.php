@@ -18,38 +18,36 @@ if (!$tipo) {
 			<ul class="nav">
 				<li>Cadastrar
 					<ol>
-						<li><a href="/petshop/cadastrar/cliente" target="janela" onclick="exibir()">Cliente</a></li>
-						<li><a href="/petshop/cadastrar/pet" target="janela" onclick="exibir()">Pet</a></li>
-						<li><a href="/petshop/usuario/cadastrar" target="janela" onclick="exibir()">Usuário</a></li>
-						<li><a href="/petshop/cadastrar/servico" target="janela" onclick="exibir()">Serviço</a></li>
+						<li><a href="/petshop/cadastrar/cliente" target="janela">Cliente</a></li>
+						<li><a href="/petshop/cadastrar/pet" target="janela">Pet</a></li>
+						<li><a href="/petshop/usuario/cadastrar" target="janela">Usuário</a></li>
+						<li><a href="/petshop/cadastrar/servico" target="janela">Serviço</a></li>
 					</ol>
 				</li>
 				<li>Listar
 					<ol>
-						<li><a href="/petshop/listar/cliente" target="janela" onclick="exibir()">Cliente</a></li>
-						<li><a href="/petshop/listar/pet" target="janela" onclick="exibir()">Pet</a></li>
-						<li><a href="/petshop/listar/servico" target="janela" onclick="exibir()">Serviço</a></li>
-						<li><a href="/petshop/usuario" target="janela" onclick="exibir()">Usuário</a></li>
+						<li><a href="/petshop/listar/cliente" target="janela">Cliente</a></li>
+						<li><a href="/petshop/listar/pet" target="janela">Pet</a></li>
+						<li><a href="/petshop/listar/servico" target="janela">Serviço</a></li>
+						<li><a href="/petshop/usuario" target="janela">Usuário</a></li>
 					</ol>
 				</li>
 				<li>Buscar
 					<ol>
-						<li><a href="/petshop/buscar" target="janela" onclick="exibir()">Dados</a></li>
+						<li><a href="/petshop/buscar" target="janela">Dados</a></li>
 					</ol>
 				</li>
 				<li>Sair
 					<ol>
-						<li><a href="/petshop/logoff" target="janela" onclick="exibir()">Logoff</a></li>
+						<li><a href="/petshop/logoff" target="janela">Logoff</a></li>
 					</ol>
 				</li>
 			</ul>
 		</div>
 	</div>
-	<span class="exibe"></span>
 	<div id="principal">
-		<iframe name="janela" id="janela" onload="desaparecer()"></iframe>
+		<iframe name="janela" id="janela"></iframe>
 	</div>
-	<script src="/petshop/js/load.js" defer></script>
 <?php
 	}else if($tipo==2){//funcionário
 ?>
@@ -61,36 +59,34 @@ if (!$tipo) {
 			<ul class="nav">
 				<li>Cadastrar
 					<ol>
-						<li><a href="/petshop/cadastrar/cliente" target="janela" onclick="exibir()">Cliente</a></li>
-						<li><a href="/petshop/cadastrar/pet" target="janela" onclick="exibir()">Pet</a></li>
-						<li><a href="/petshop/cadastrar/servico" target="janela" onclick="exibir()">Serviço</a></li>
+						<li><a href="/petshop/cadastrar/cliente" target="janela">Cliente</a></li>
+						<li><a href="/petshop/cadastrar/pet" target="janela">Pet</a></li>
+						<li><a href="/petshop/cadastrar/servico" target="janela">Serviço</a></li>
 					</ol>
 				</li>
 				<li>Listar
 					<ol>
-						<li><a href="/petshop/listar/cliente" target="janela" onclick="exibir()">Cliente</a></li>
-						<li><a href="/petshop/listar/pet" target="janela" onclick="exibir()">Pet</a></li>
-						<li><a href="/petshop/listar/servico" target="janela" onclick="exibir()">Serviço</a></li>
+						<li><a href="/petshop/listar/cliente" target="janela">Cliente</a></li>
+						<li><a href="/petshop/listar/pet" target="janela">Pet</a></li>
+						<li><a href="/petshop/listar/servico" target="janela">Serviço</a></li>
 					</ol>
 				</li>
 				<li>Buscar
 					<ol>
-						<li><a href="/petshop/buscar" target="janela" onclick="exibir()">Dados</a></li>
+						<li><a href="/petshop/buscar" target="janela">Dados</a></li>
 					</ol>
 				</li>
 				<li>Sair
 					<ol>
-						<li><a href="/petshop/logoff" target="janela" onclick="exibir()">Logoff</a></li>
+						<li><a href="/petshop/logoff" target="janela">Logoff</a></li>
 					</ol>
 				</li>
 			</ul>
 		</div>
 	</div>
-	<span class="exibe" style="display:none">Carregando... Aguarde</span>
 	<div id="principal">
-		<iframe name="janela" id="janela" onload="desaparecer()"></iframe>
+		<iframe name="janela" id="janela"></iframe>
 	</div>
-	<script src="/petshop/js/load.js" defer></script>
 <?php
 	}else{//cliente
 ?>
@@ -102,29 +98,27 @@ if (!$tipo) {
 			<ul class="nav">
 				<li>Listar
 					<ol>
-						<li><a href="/petshop/listar/cliente" target="janela" onclick="exibir()">Cliente</a></li>
-						<li><a href="/petshop/listar/pet" target="janela" onclick="exibir()">Pet</a></li>
-						<li><a href="/petshop/listar/servico" target="janela" onclick="exibir()">Serviço</a></li>
+						<li><a href="/petshop/listar/cliente" target="janela">Cliente</a></li>
+						<li><a href="/petshop/listar/pet" target="janela">Pet</a></li>
+						<li><a href="/petshop/listar/servico" target="janela">Serviço</a></li>
 					</ol>
 				</li>
 				<li>Buscar
 					<ol>
-						<li><a href="/petshop/buscar" target="janela" onclick="exibir()">Dados</a></li>
+						<li><a href="/petshop/buscar" target="janela">Dados</a></li>
 					</ol>
 				</li>
 				<li>Sair
 					<ol>
-						<li><a href="/petshop/logoff" target="janela" onclick="exibir()">Logoff</a></li>
+						<li><a href="/petshop/logoff" target="janela">Logoff</a></li>
 					</ol>
 				</li>
 			</ul>
 		</div>
 	</div>
-	<span class="exibe"></span>
 	<div id="principal">
-		<iframe name="janela" id="janela" onload="desaparecer()"></iframe>
+		<iframe name="janela" id="janela"></iframe>
 	</div>
-	<script src="/petshop/js/load.js" defer></script>
 <?php 
 	}
 }
